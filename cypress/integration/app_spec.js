@@ -22,7 +22,8 @@ describe('Sign Up', () => {
     cy.get('input[type="submit"]')
       .click()
 
-    cy.get('li')
+    // We can also fix it if we increase timeout globally on cypress.json
+    cy.get('li', { timeout: 10000 })
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
 })
